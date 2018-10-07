@@ -1,0 +1,30 @@
+{
+  "name": "techno_bazh_chat",
+  "version": "0.0.1",
+  "description": "first attempt to code something",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "python3 ./app/main.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazySt/Techno_Bazhenov.git"
+  },
+  "keywords": [
+    "chat",
+    "study",
+    "homeworks",
+    "TechoTrack"
+  ],
+  "author": "Bazhenov Sergey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrazySt/Techno_Bazhenov/issues"
+  },
+  "homepage": "https://github.com/CrazySt/Techno_Bazhenov#readme"
+}
