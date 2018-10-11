@@ -17,14 +17,16 @@ class DLLMethodsTest(unittest.TestCase):
         self.assertEqual(i.pop(), 'e')
         self.assertEqual(i.pop(), 'q')
         self.assertEqual(i.pop(), 'w')
-        self.assertEqual(i.pop(), None)
+        with self.assertRaises(dll.EmptyListException):
+            i.pop()
 
     def test_shift(self):
         i = dll.DoubleLinkedList('w', 'q', 'e')
         self.assertEqual(i.shift(), 'w')
         self.assertEqual(i.shift(), 'q')
         self.assertEqual(i.shift(), 'e')
-        self.assertEqual(i.shift(), None)
+        with self.assertRaises(dll.EmptyListException):
+            i.shift()
 
     def test_delete(self):
         i = dll.DoubleLinkedList('w', 'q', 'e', 'e')
@@ -51,13 +53,15 @@ class DLLMethodsTest(unittest.TestCase):
         i = dll.DoubleLinkedList('w', 'q', 'e')
         self.assertEqual(i.first(), 'w')
         i = dll.DoubleLinkedList()
-        self.assertEqual(i.first(), None)
+        with self.assertRaises(dll.EmptyListException):
+            i.first()
 
     def test_last(self):
         i = dll.DoubleLinkedList('w', 'q', 'e')
         self.assertEqual(i.last(), 'e')
         i = dll.DoubleLinkedList()
-        self.assertEqual(i.last(), False)
+        with self.assertRaises(dll.EmptyListException):
+            i.last()
 
     def test_length(self):
         i = dll.DoubleLinkedList('w', 'q', 'e')

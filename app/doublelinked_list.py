@@ -12,6 +12,11 @@ class Item:
         return self.prev_item
 
 
+class EmptyListException(Exception):
+    def __init__(self):
+        Exception.__init__(self, "This double_linked_list is empty!")
+
+
 class DoubleLinkedList:
     def __init__(self, *args):
         if args:
@@ -36,13 +41,14 @@ class DoubleLinkedList:
                 _ = i.next_item
                 i = _
         else:
-            return False
+            raise EmptyListException()
         return i.elem
 
     def first(self):
         if self.first_item:
             return self.first_item.elem
-        return None
+        else:
+            raise EmptyListException()
 
     def push(self, something):
         new_elem = Item(something)
@@ -87,7 +93,8 @@ class DoubleLinkedList:
                 pre = last.prev_item
                 pre.next_item = None
             return last.elem
-        return None
+        else:
+            raise EmptyListException()
 
     def delete(self, query):
         i = self.first_item
@@ -125,7 +132,7 @@ class DoubleLinkedList:
                 self.first_item.prev_item = None
             return i.elem
         else:
-            return None
+            raise EmptyListException()
 
     def make_list(self):
         result = list()
