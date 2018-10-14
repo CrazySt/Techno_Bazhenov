@@ -9,7 +9,6 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "python3 -m unittest test.tests_Doublelinked_list.py"
   },
   "repository": {
     "type": "git",
